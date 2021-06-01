@@ -1,0 +1,44 @@
+<nav class="navbar fixed navbar-expand-lg navbar-light bg-light">
+  <!-- <mat-icon aria-label="Example home icon">child_care</mat-icon> -->
+  <img src="../assets/images/icon1.png" class="icon" />
+  <a class="navbar-brand" routerLink="home">Baby's World</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="toggleNavbar()"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    class="collapse navbar-collapse justify-content-between"
+    [ngClass]="{ show: navbarOpen }"
+    id="navbarNavAltMarkup"
+  >
+    <span class="spacer"></span>
+    <div class="navbar-nav ml-auto">
+      <!-- <img src="../assets/images/home.png" class="icon" /> -->
+      <a class="nav-item nav-link" [routerLinkActive]="['active']">Home</a>
+      <a
+        class="nav-item nav-link"
+        [routerLinkActive]="['active']"
+        routerLink="wishlist"
+        >Wishlist</a
+      >
+      <a
+        class="nav-item nav-link"
+        [routerLinkActive]="['active']"
+        routerLink="cart"
+        >Cart</a
+      >
+    </div>
+    <!-- <span class="spacer"></span> -->
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="">Logout</a>
+    </div>
+  </div>
+</nav>
