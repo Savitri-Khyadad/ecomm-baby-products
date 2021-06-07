@@ -1,7 +1,7 @@
 <div class="con">
-  <nav class="navbar fixed navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar fixed navbar-expand-lg navbar-dark bg-light">
     <!-- <mat-icon aria-label="Example home icon">child_care</mat-icon> -->
-    <img src="../assets/images/icon1.png" class="icon" />
+    <img src="../assets/images/Logo.png" class="logo" />
     <a class="navbar-brand" routerLink="home">Baby's World</a>
     <button
       class="navbar-toggler"
@@ -53,6 +53,19 @@
         <a class="nav-item nav-link" routerLink="login">Login</a>
         <a class="nav-item nav-link" routerLink="signup">Sign Up</a>
       </div>
+      <!-- <div *ngIf="userService.userLogin; then thenBlock; else elseBlock"></div>
+      <ng-template #elseBlock>
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" routerLink="login">Login</a>
+          <a class="nav-item nav-link" routerLink="signup">Sign Up</a>
+        </div>
+      </ng-template>
+      <ng-template #thenBlock>
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" routerLink="cart">Cart</a>
+          <a class="nav-item nav-link" routerLink="">Logout</a>
+        </div>
+      </ng-template> -->
     </div>
   </nav>
   <!-- <app-home></app-home> -->

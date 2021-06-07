@@ -3,7 +3,7 @@
   flex: 1 1 auto;
 }
 .con {
-  background-color: #dfe7fd;
+  background-image: url("../assets/images/bgImg.jpg");
   height: 100%;
   width: 100%;
 }
@@ -11,7 +11,8 @@
   padding: 0 5%;
   width: 100%;
   z-index: 3;
-  background-color: #dfe7fd !important;
+  /* background-color: #dfe7fd !important; */
+  background-color: inherit !important;
   left: 0;
   top: 0;
   /* box-shadow: 0 10px 30px -5px rgb(160 44 219 / 7%) !important; */
@@ -29,6 +30,13 @@
   color: aqua !important;
 } */
 
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-top: 0.5%;
+  margin-right: 0.5%;
+}
+
 .navbar a {
   font-size: 1.3em;
   font-weight: 600;
@@ -36,7 +44,7 @@
 }
 
 .navbar a:hover {
-  color: rgb(139, 179, 196);
+  color: rgb(255, 255, 255);
 }
 
 .icon {
@@ -46,7 +54,7 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .con {
-    background-color: #dfe7fd;
+    background-color: inherit !important;
     height: 100%;
     width: 100%;
   }

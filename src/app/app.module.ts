@@ -13,13 +13,11 @@ import { SignupComponent } from './user/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { WrapperComponent } from './Wrapper.component';
 import { ProductsComponent } from './products/products.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { UserComponent } from './user/user.component';
 import { User1Component } from './user/user1.component';
 // import { FooterComponent } from './footer/footer.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +28,6 @@ import { User1Component } from './user/user1.component';
     CarouselComponent,
     HomeComponent,
     ProductsComponent,
-    NavigationComponent,
     CartComponent,
     WishlistComponent,
     UserComponent,

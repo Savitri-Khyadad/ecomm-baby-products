@@ -30,7 +30,7 @@ const routes: Routes = [
     path: '', component: WrapperComponent,
     children: [{ path: '', component: HomeComponent }]
   },
-  { path: 'cart', component: CartComponent },
+  // { path: 'cart', component: CartComponent },
   { path: 'wishlist', component: WishlistComponent },
   {
     path: 'signup', component: UserComponent,
@@ -40,9 +40,14 @@ const routes: Routes = [
     path: 'login', component: User1Component,
     children: [{ path: '', component: LoginComponent }]
   },
-  // {
-  //   path: '', redirectTo: '/signup', pathMatch: 'full'
-  // }
+  {
+    path: 'products', component: WrapperComponent,
+    children: [{ path: '', component: ProductsComponent }]
+  },
+  {
+    path: 'cart', component: WrapperComponent,
+    children: [{ path: '', component: CartComponent }]
+  },
 ];
 
 @NgModule({

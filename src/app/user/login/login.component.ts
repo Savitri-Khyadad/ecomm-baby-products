@@ -1,24 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserService } from '../../shared/user.service'
+import { UserService } from '../../shared/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [UserService]
 })
 export class LoginComponent implements OnInit {
+
+  fullName!: string;
+  email!: string;
+  password!:string;
+
 
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   showSucessMessage!: boolean;
   serverErrorMessages!: string;
 
-  constructor(public userService: UserService) { }
+  constructor(public userService: UserService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit() {
+    this.userService.userLogin = true;
+    this.router.navigate(['products']);
+    console.log(this.userService.userLogin)
     // this.userService.postUser(form.value).subscribe(
     //   res => {
     //     this.showSucessMessage = true;
@@ -35,15 +46,15 @@ export class LoginComponent implements OnInit {
     // );
   }
 
-  resetForm(form: NgForm) {
-    this.userService.selectedUser = {
-      fullName: '',
-      email: '',
-      password: ''
-    };
-    form.resetForm();
-    this.serverErrorMessages = '';
-  }
+  // resetForm(form: NgForm) {
+  //   this.userService.selectedUser = {
+  //     name: '',
+  //     email: '',
+  //     password: ''
+  //   };
+  //   form.resetForm();
+  //   this.serverErrorMessages = '';
+  // }
 
 
 }
