@@ -1,1 +1,19 @@
-<p>cart works!</p>
+<div class="container">
+  <div class="content">
+    <div class="cardContainer" *ngFor="let num of [1, 2, 3, 4, 5]">
+      <div class="card">
+        <img
+          src="../../assets/images/image2.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Card title {{ num }}</h5>
+          <p class="card-text">Price:{{ num }}</p>
+          <button>Buy Now</button>
+          <button>Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

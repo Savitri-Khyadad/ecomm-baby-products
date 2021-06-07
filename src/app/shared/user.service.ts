@@ -11,12 +11,13 @@ export class UserService {
   selectedUser: User = {
     fullName: '',
     email: '',
-    password: ''
+    password: '',
   };
+  userLogin = false;
 
   constructor(private http: HttpClient) { }
 
   // postUser(user: User){
-  //   return this.http.post(environment.apiBaseUrl+'/register',user);
+  //   return this.http.post(environment.apiBaseUrl+'users',user);
   // }
 }
