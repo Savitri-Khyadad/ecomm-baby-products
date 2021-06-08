@@ -30,4 +30,19 @@ export class AppComponent {
   toggleNavbar(){
     this.navbarOpen = !this.navbarOpen;
   }
+
+  onLogout = async () => {
+    await fetch('http://localhost:3000/users/logout', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem("token")}`
+      }
+    }).then((res) => {
+      if  (res.status === 200) {
+        localStorage.removeItem("token");
+      }
+    }).catch(err => console.log(err));
+  }
 }
