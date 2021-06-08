@@ -14,13 +14,16 @@ export class AppComponent {
   isLoggedin = false;
 
 
-  constructor(private router: Router,public userService: UserService) {
+  constructor(private router: Router,private userService: UserService) {
   }
+
+  loginStatus$!: Observable<boolean>;
 
   ngOnInit(): void {
-
+    this.loginStatus$ = this.userService.isLoggedIn;
   }
   title = 'babysworld';
+
 
   navbarOpen = false;
 

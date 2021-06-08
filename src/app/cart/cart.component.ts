@@ -28,19 +28,7 @@ export class CartComponent implements OnInit {
 
   Items:any = [];
 
-  // async getItems(){
-  //   // let content: any;
 
-  //   var content = await fetch('http://localhost:3000/cart', {
-  //           method: 'GET',
-  //           headers: {
-  //               'Authorization': `Bearer ${localStorage.getItem("token")}`
-  //           }
-  //       });
-  //       // this.Item = await content.json();
-  //       this.Items = await content.json();
-  //       console.log(this.Items[0].image)
-  // }
   getItems = async () => {
 		await fetch('http://localhost:3000/cart',{
       method: 'GET',
@@ -83,7 +71,7 @@ export class CartComponent implements OnInit {
     });
     var post = await content.json();
     console.log(post.title);
-    // window.location.reload(true)
+    window.location.reload(true)
   }
 
   async patchItem (id: any) {
@@ -98,7 +86,7 @@ export class CartComponent implements OnInit {
     });
     var post = await content.json();
     console.log("edit: "+post);
-    // window.location.reload(true);
+    window.location.reload(true);
   }
 
   setQuantity(q:number){

@@ -51,8 +51,9 @@ export class LoginComponent implements OnInit {
             if (res.status === 200) {
                 content = await res.json();
 				localStorage.setItem("token", content.token);
+        this.userService.loginStatus.next(true);
 				// Those 3 lines already in the function before modification.
-				this.userService.isLoggedIn  = true;
+
 				console.log(content)
 				this.router.navigate(['products']);
             } else {

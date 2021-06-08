@@ -1,14 +1,21 @@
 <div class="container">
-	<div class="row">
-		<div class="col col-6" *ngFor="let product of products; let i = index">
-			<div class="card card-content text-center">
-				<img [src]="imageReq + product.image" alt="Product Image" class="mx-auto card-img-top card_image">
-				<div class="card-body">
-					<h5 class="card-title mb-2">{{product.title}}</h5>
-					<h5 class="card-subtitle mb-4">Rs {{product.price}}</h5>
-					<a class="btn btn-primary" (click)="addToCart(i)">Add to Cart</a>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col col-6" *ngFor="let product of products; let i = index">
+      <div class="card card-content text-center">
+        <img
+          [src]="imageReq + product.image"
+          alt="Product Image"
+          class="mx-auto card-img-top card_image"
+        />
+        <div class="card-body">
+          <h5 class="card-title mb-2">{{ product.title }}</h5>
+          <h5 class="card-subtitle mb-4">Rs {{ product.price }}</h5>
+          <!-- <a class="btn btn-primary" (click)="addToCart(i)">Add to Cart</a> -->
+          <button class="btn1 btn-primary" (click)="addToCart(i)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

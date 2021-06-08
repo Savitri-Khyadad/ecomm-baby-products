@@ -51,7 +51,11 @@
       <span class="spacer"></span>
       <div class="navbar-nav">
         <div
-          *ngIf="this.userService.isLoggedIn; then thenBlock; else elseBlock"
+          *ngIf="
+            loginStatus$ | async as loginStatus;
+            then thenBlock;
+            else elseBlock
+          "
         ></div>
         <ng-template #elseBlock>
           <div class="navbar-nav">
