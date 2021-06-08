@@ -17,12 +17,13 @@ export class AppComponent {
   constructor(private router: Router,private userService: UserService) {
   }
 
-  loginStatus$!: Observable<boolean>;
+  val = localStorage.getItem('token');
 
   ngOnInit(): void {
-    this.loginStatus$ = this.userService.isLoggedIn;
+
   }
   title = 'babysworld';
+
 
 
   navbarOpen = false;
@@ -42,6 +43,7 @@ export class AppComponent {
     }).then((res) => {
       if  (res.status === 200) {
         localStorage.removeItem("token");
+        window.location.reload(true)
       }
     }).catch(err => console.log(err));
   }

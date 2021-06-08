@@ -50,35 +50,26 @@
       </div>
       <span class="spacer"></span>
       <div class="navbar-nav">
-        <!-- <div
-          *ngIf="
-            loginStatus$ | async as loginStatus;
-            then thenBlock;
-            else elseBlock
-          "
-        <!-- <div
-          *ngIf="this.userService.isLoggedIn; then thenBlock; else elseBlock"
-        ></div>
-        <ng-template #elseBlock>
-          <div class="navbar-nav">
-            <p style="color: aliceblue">{{ this.userService.isLoggedIn }}</p>
-            <a class="nav-item nav-link" routerLink="login">Login</a>
-            <a class="nav-item nav-link" routerLink="signup">Sign Up</a>
-          </div>
-        </ng-template>
-        <ng-template #thenBlock>
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" routerLink="cart">Cart</a>
-            <a class="nav-item nav-link" routerLink="">Logout</a>
-          </div>
-        </ng-template> -->
-        -->
         <div class="navbar-nav">
-          <a class="nav-item nav-link" routerLink="products">Products</a>
+          <a
+            class="nav-item nav-link"
+            routerLink="products"
+            *ngIf="this.val != null"
+            >Products</a
+          >
           <a class="nav-item nav-link" routerLink="login">Login</a>
           <a class="nav-item nav-link" routerLink="signup">Sign Up</a>
-          <a class="nav-item nav-link" routerLink="cart">Cart</a>
-          <a class="nav-item nav-link" routerLink="" (click)="onLogout()"
+          <a
+            class="nav-item nav-link"
+            routerLink="cart"
+            *ngIf="this.val != null"
+            >Cart</a
+          >
+          <a
+            class="nav-item nav-link"
+            routerLink=""
+            (click)="onLogout()"
+            *ngIf="this.val != null"
             >Logout</a
           >
         </div>
