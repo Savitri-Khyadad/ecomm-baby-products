@@ -1,9 +1,19 @@
-.content {
-  /* height: 100%; */
-  /* margin: 5% 5% 5% 5%; */
-  margin: 5% 5%;
+.container {
+  height: 100%;
 }
 
-.container {
-  height: 90vh;
+.card-content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card {
+  border: 2px solid rgb(0, 202, 27);
+  background-color: whitesmoke;
+}
+
+.card_image {
+  max-width: 200px;
+  max-height: 200px;
+  margin: 10px;
 }
