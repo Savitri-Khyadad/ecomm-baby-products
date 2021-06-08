@@ -24,23 +24,37 @@ export class CartComponent implements OnInit {
   q!:number;
 
   closeResult = '';
-  imageReq='data:image/png;base64';
+  imageReq = 'data:image/png;base64,';
 
-  Items:any;
+  Items:any = [];
 
-  async getItems(){
-    // let content: any;
+  // async getItems(){
+  //   // let content: any;
 
-    var content = await fetch('http://localhost:3000/cart', {
-            method: 'GET',
+  //   var content = await fetch('http://localhost:3000/cart', {
+  //           method: 'GET',
+  //           headers: {
+  //               'Authorization': `Bearer ${localStorage.getItem("token")}`
+  //           }
+  //       });
+  //       // this.Item = await content.json();
+  //       this.Items = await content.json();
+  //       console.log(this.Items[0].image)
+  // }
+  getItems = async () => {
+		await fetch('http://localhost:3000/cart',{
+      method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`
             }
-        });
-        // this.Item = await content.json();
-        this.Items = await content.json();
-        console.log(this.Items[0].image)
-  }
+    })
+		.then(async (res) => {
+			if (res.status === 200) {
+				this.Items = await res.json();
+			}
+		})
+		.catch(err => console.log(err))
+	}
 
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title',size: 'xl'}).result.then((result) => {

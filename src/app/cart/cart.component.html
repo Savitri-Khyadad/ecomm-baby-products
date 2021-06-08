@@ -1,34 +1,39 @@
 <div class="container">
   <div class="content">
-    <div class="cardContainer" *ngFor="let i of Items">
+    <div class="cardContainer" *ngFor="let item of Items; let i = index">
       <div class="card">
-        <img
+        <!-- <img
           src="../../assets/images/image2.jpg"
           class="card-img-top"
           alt="..."
+        /> -->
+        <img
+          [src]="imageReq + item.image"
+          alt="Product Image"
+          class="mx-auto card-img-top card_image"
         />
         <!-- <img ng-src="imageReq + i.image" class="card-img-top" alt="image!" /> -->
         <div class="card-body">
-          <h5 class="card-title">{{ i.title }}</h5>
-          <p class="card-text">Price:<span>&#8377;</span>{{ i.price }}</p>
+          <h5 class="card-title">{{ item.title }}</h5>
+          <p class="card-text">Price:<span>&#8377;</span>{{ item.price }}</p>
           <label>Quantity:</label>
           <input
             class="quan"
             type="number"
             [(ngModel)]="quantity"
             min="1"
-            placeholder="{{ i.quantity }}"
+            placeholder="{{ item.quantity }}"
             (ngModelChange)="setQuantity(quantity)"
           />
           <img
             class="icon"
             src="../../assets/images/edit.svg"
-            (click)="patchItem(i._id)"
+            (click)="patchItem(item._id)"
           />
           <br />
           <button class="btn1" (click)="open(content)">Buy Now</button>
 
-          <button class="btn1" (click)="removeItem(i._id)">Remove</button>
+          <button class="btn1" (click)="removeItem(item._id)">Remove</button>
         </div>
       </div>
       <ng-template #content let-modal let-c="close" let-d="dismiss">
@@ -141,13 +146,13 @@
             </div>
             <p></p>
             <label class="form-label" style="display: block"
-              >Product: {{ i.title }}</label
+              >Product: {{ item.title }}</label
             >
             <label class="form-label" style="display: block"
-              >Quantity: {{ i.quantity }}</label
+              >Quantity: {{ item.quantity }}</label
             >
             <label class="form-label" style="display: block"
-              >Total Price: {{ i.price }}</label
+              >Total Price: {{ item.price }}</label
             >
 
             <!-- <div class="form-check">
