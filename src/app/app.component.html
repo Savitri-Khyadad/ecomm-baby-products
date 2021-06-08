@@ -50,12 +50,12 @@
       </div>
       <span class="spacer"></span>
       <div class="navbar-nav">
-        <div
+        <!-- <div
           *ngIf="this.userService.isLoggedIn; then thenBlock; else elseBlock"
         ></div>
         <ng-template #elseBlock>
           <div class="navbar-nav">
-            <!-- <p style="color: aliceblue">{{ this.userService.isLoggedIn }}</p> -->
+            <p style="color: aliceblue">{{ this.userService.isLoggedIn }}</p>
             <a class="nav-item nav-link" routerLink="login">Login</a>
             <a class="nav-item nav-link" routerLink="signup">Sign Up</a>
           </div>
@@ -65,7 +65,14 @@
             <a class="nav-item nav-link" routerLink="cart">Cart</a>
             <a class="nav-item nav-link" routerLink="">Logout</a>
           </div>
-        </ng-template>
+        </ng-template> -->
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" routerLink="products">Products</a>
+          <a class="nav-item nav-link" routerLink="login">Login</a>
+          <a class="nav-item nav-link" routerLink="signup">Sign Up</a>
+          <a class="nav-item nav-link" routerLink="cart">Cart</a>
+          <a class="nav-item nav-link" routerLink="" (click)="onLogout()">Logout</a>
+        </div>
       </div>
     </div>
   </nav>
