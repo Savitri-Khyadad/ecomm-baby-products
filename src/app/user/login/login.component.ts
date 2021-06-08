@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit(): void {
 	}
-	
+
 	async onSubmit() {
 
 		if (this.password.length < 7) {
@@ -43,17 +43,16 @@ export class LoginComponent implements OnInit {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ 
-                email: this.email, 
-                password: this.password 
+            body: JSON.stringify({
+                email: this.email,
+                password: this.password
             })
         }).then(async (res) => {
             if (res.status === 200) {
                 content = await res.json();
 				localStorage.setItem("token", content.token);
 				// Those 3 lines already in the function before modification.
-				this.userService.userLogin = true;
-				console.log(this.userService.userLogin)
+				this.userService.isLoggedIn  = true;
 				console.log(content)
 				this.router.navigate(['products']);
             } else {

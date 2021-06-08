@@ -1,7 +1,7 @@
 <div class="container">
   <!-- <p class="content">login works!</p> -->
   <div class="container">
-    <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit()">
+    <form #signUpForm="ngForm" (ngSubmit)="onSubmit()">
       <input
         type="text"
         [(ngModel)]="email"

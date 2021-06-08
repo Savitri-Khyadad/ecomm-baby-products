@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { UserService } from './shared/user.service';
 
 @Component({
@@ -9,11 +10,15 @@ import { UserService } from './shared/user.service';
   providers: [UserService]
 })
 export class AppComponent {
+  // isLoggedIn$!: Observable<boolean>;
+  isLoggedin = false;
 
-  constructor(public userService: UserService) {
+
+  constructor(private router: Router,public userService: UserService) {
   }
 
   ngOnInit(): void {
+
   }
   title = 'babysworld';
 
